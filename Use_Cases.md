@@ -22,4 +22,29 @@ Name: Data Visualization<br/>
 What it does: Visualizes the waste water treatment database<br/>
 Inputs: Waste water treatment database<br/>
 Outputs: plots<br/>
-How use other components: database, user interface<br/>
+Components:
+* Temperature Database for listed countries -- Weather and climate report based on location info
+* Population data/report for listed locations
+* Primary database
+* Packages to sort and combine databases
+* Proper dataframe/data structure for combined data
+* basic visual model -- such as bar plot, scatter plot, list, tree, etc.
+* Packages to add features. For example: color marker, ranking,etc.
+* Methods/packages to add interactive features: Zoom-in/out,label,etc.
+
+Working flow:
+1. DataMining: 
+   * Look into reports/database that is needed
+   * Clear the primary databse to just keep columns interested.
+2. Data Refining:
+   * Decide proper data structure and package(s)
+   * Create final combined dataframe
+3. Basic visulization
+   * Create basic model such as bar plots, hitosgram,tree
+   * This will probably provide insight for Machine Learning Model
+4. Add features
+   * Machine Learning model could probably also helps decide what features to add
+5. Interactive feature
+   * Decide visulization package to make visualization interactive
+   * This could also be part of user interface 
+How use other components: Machine Learning Model, user interface as suggested above<br/>
