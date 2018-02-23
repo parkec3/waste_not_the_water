@@ -14,7 +14,22 @@ Name: Predict new treatment plant<br/>
 What it does: It takes waste water data from the user, what size streams and what type<br/>
 Inputs: User gives waste water data, size, and type<br/>
 Outputs: Energy/cost of new water treatment plant<br/>
-How use other components: Uses the machine learning model and the user interface<br/>
+How to use other components: Uses the machine learning model and the user interface<br/>
+Components:
+* The machine learning model
+
+Work Flow:
+1. The user inputs or what information the user need to collect 
+   * Locations (e.g., Longitude, Latitude)
+   * Waste water entry load
+   * Treatment Type (e.g., Nitrogen removal, Phosphorus removla, fitration)
+
+2. Enter the inputs into the machine learning model
+
+3. The machine learning model outputs
+   * Capacity fo the treatment plant
+   * Compare the inputs the user provide with the primary database, if there is a similar case in the database, 
+suggest the user to contact the existing plant for more information
 
 ### Third Use Case
 
