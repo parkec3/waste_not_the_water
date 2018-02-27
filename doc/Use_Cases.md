@@ -5,8 +5,28 @@
 Name: Build a Machine Learning Model<br/>
 What it does: It takes data as inputs and trains a new model that will be used for prediction<br/>
 Inputs: Data from the water treatment plants<br/>
-Outputs: How much energy/cost is needed for a particular plant in a particular place for a certain amount of water<br/>
+Outputs: What plant capacity is needed for a particular plant in a particular place for a certain amount of water<br/>
 How use other components: Data from the water treatment plant database for Europe
+Components:
+* Machine Learning package: scikitlearn
+* Temperature Database for listed countries -- Weather and climate report based on location info
+* Population data/report for listed locations
+* Primary database
+* Packages to sort and combine databases
+* Proper dataframe/data structure for combined data
+
+Work Flow:
+1. DataMining: 
+   * Look into reports/database that is needed
+   * Clear the primary database to just keep columns interested.
+2. Data Refining:
+   * Decide proper data structure and package(s)
+   * Create final combined dataframe
+3. Choose machine learning algorithm to explore
+   * Feature selection of input data
+   * Train Model
+   * Test Model
+   * Compare and iterate with new features or machine learning methods
 
 ### Second Use Case
 
@@ -17,6 +37,8 @@ Outputs: Energy/cost of new water treatment plant<br/>
 How to use other components: Uses the machine learning model and the user interface<br/>
 Components:
 * The machine learning model
+* User interface
+* Primary database
 
 Work Flow:
 1. The user inputs or what information the user need to collect 
@@ -29,7 +51,7 @@ Work Flow:
 3. The machine learning model outputs
    * Capacity fo the treatment plant
    * Compare the inputs the user provide with the primary database, if there is a similar case in the database, 
-suggest the user to contact the existing plant for more information
+Suggest the user to contact the existing plant for more information
 
 ### Third Use Case
 
@@ -50,7 +72,7 @@ Components:
 Working flow:
 1. DataMining: 
    * Look into reports/database that is needed
-   * Clear the primary databse to just keep columns interested.
+   * Clear the primary database to just keep columns interested.
 2. Data Refining:
    * Decide proper data structure and package(s)
    * Create final combined dataframe
