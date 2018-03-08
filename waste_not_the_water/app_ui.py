@@ -12,7 +12,16 @@ import dash_core_components as dcc
 
 app = dash.Dash()
 
-text_style = dict(fontFamily='sans-serif', fontWeight=300)
+app.config.suppress_callback_exceptions = True
+
+app.layout = html.Div([
+	dcc.Location(id='url', refresh=False),
+	html.Div(id='page-content')	
+])
+
+######################################################################
+# Home page
+######################################################################
 
 markdown_text = '''
 ### waste_not_the_water
@@ -21,14 +30,26 @@ waste_not_the_water utilizes the open [Urban Waste Water Treatment database](htt
  from [the European Environment Agency](https://www.eea.europa.eu/).
 '''
 
-app.layout = html.Div([
+index_page = html.Div([
+	dcc.Link('Go to Data Visualization', href='/data-vis'),
+	hmtl.Br(),
+	dcc.Link('Go to Machine Learning Model', href='/ml-model'),
+	html.Br(),
 	dcc.Markdown(children=markdown_text)
 ])
 
-dcc.Input(
-	placeholder='Enter a value...', type='text', value=''
+######################################################################
+# Page 2: Data Visualization
+######################################################################
 
-)
+# data_vis_layout = html.Div([
+# 	html.H1('Data Visualization'),
+# 	html.Div
+# ])
+
+######################################################################
+# Page 3: Machine Learning Model
+######################################################################
 
 ######################################################################
 # Interactive part
