@@ -85,3 +85,21 @@ Working flow:
    * Decide visulization package to make visualization interactive
    * This could also be part of user interface 
 How use other components: Machine Learning Model, user interface as suggested above<br/>
+
+##### Primitive Component: User Interface
+
+* 3 page app from dash that runs locally on browser
+   * 1st page - default home page
+      * No interactive components except for the links to the other pages
+      * Description of the project in markdown
+      * Describe the two use cases involved and links
+   * 2nd page - data visualization
+      * interactive graph or visualization
+         * how is this going to be interactive - dash or otherwise
+      * dropdown menu for plant/agglomeration size that updates the graph
+         * interactive component - update graph
+   * 3rd page - machine learning model input
+      * Agglomeration size - text input
+      * dropdown menu for other features that are yes/no
+      * input for average max and min temperature
+      * output - what capacity is needed and the closest plant in terms of all the inputs
