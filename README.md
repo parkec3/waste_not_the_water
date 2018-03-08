@@ -1,14 +1,3 @@
 
 # waste_not_the_water
-This repository is used for our group project for the DIRECT class as a tool for wastewater treatment plants.
-<<<<<<< HEAD
-Having fun in DIRECT with my girls.
-=======
-<<<<<<< HEAD
-
-Hi, guys! I am here.
-=======
-Having fun in DIRECT with my girls.
->>>>>>> 614483cb7b40497dadd8da7e1db90c7289d6ceac
->>>>>>> 7fbd896cb4f702f8b26791a6d6893b4251ac4f1e
-Yuening is here
+This repository is used for our group project for the DIRECT class as a tool for wastewater treatment plants. This tool can be used to predict capacity for a new European wastewater treatment plant and a visualization of the database from the Waste Water Treatment Directive.
