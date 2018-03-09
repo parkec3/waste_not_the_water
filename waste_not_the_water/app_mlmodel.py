@@ -22,15 +22,16 @@ import dash_core_components as dcc
 app = dash.Dash()
 
 app.layout = html.Div(children=[
-	dcc.Markdown('''
-		## Machine Learning Model
-		The model takes five inputs: agglomeration size, latitude,
-		longitude, Nitrogen Removal, and Phosphorous Removal. To predict
-		capacity size, fill out the form below and press submit.
-	'''),
-	dcc.Markdown('''
-		Input the agglomeration size.
-	'''),
+	html.H1(children='Machine Learning Model'),
+	html.Div([
+		html.P('The model takes five inputs: agglomeration size, latitude,'
+		' longitude, nitrogen removal, and phosphorous removal. To predict'
+		' capacity size, fill out the form below and press submit.')
+	]),
+#	html.Br,
+	html.Div([
+		html.P('Input the agglomeration size.'
+	)]),
 	# text input for agglomeration
 	dcc.Input(
 		id='input-agg-box',
@@ -38,9 +39,9 @@ app.layout = html.Div(children=[
 		type='text',
 		value=''
 	),
-	dcc.Markdown('''
-		What is the latitude coordinate?
-	'''),
+	html.Div([
+		html.P('What is the latitude coordinate?'
+	)]),
 	# text input for latitude
 	dcc.Input(
 		id='input-lat-box',
@@ -48,9 +49,9 @@ app.layout = html.Div(children=[
 		type='text',
 		value=''
 	),
-	dcc.Markdown('''
-		What is the longitude coordinate?
-	'''),
+	html.Div([
+		html.P('What is the longitude coordinate?'
+	)]),
 	# text input for longitude
 	dcc.Input(
 		id='input-lon-box',
@@ -66,7 +67,7 @@ app.layout = html.Div(children=[
 			{'label': 'Nitrogren Removal', 'value': 'NRemoval'},
 			{'label': 'Phosphorous Removal', 'value': 'PRemoval'}
 		],
-		values=[''] # do I need this for no check boxes or will it raise an error?
+		values=[] # do I need this for no check boxes or will it raise an error?
 	),
 	# Submit button, make the model only run after it's pressed
 	html.Button('Submit', id='button'),
@@ -82,11 +83,11 @@ app.layout = html.Div(children=[
 	# Output after the button is pressed. just text.
 	dash.dependencies.Output('output-container-button', 'children'),
 	# Input from the button, number of clicks
-	[dash.dependencies.Input('button', 'n_clicks'),
+	[dash.dependencies.Input('button', 'n_clicks')],
 	# Input from the agg text box
-	dash.dependencies.State('input-agg-box', 'value'),
+	[dash.dependencies.State('input-agg-box', 'value'),
 	# Input from the lat text box
-	dash.dependencies.State('input-lat-box', 'value_lat'),
+	dash.dependencies.State('input-lat-box', 'value'),
 	# Input from the lon text box
 	dash.dependencies.State('input-lon-box', 'value'),
 	# Input from the checkboxes, is it one or more inputs because it's
@@ -94,7 +95,7 @@ app.layout = html.Div(children=[
 	dash.dependencies.State('checklist', 'values')])
 def update_output(n_clicks, value_agg, value_lat, value_lon,
  checkboxes_values):
-	return 'clicks {}, {}, {}, {}, {}'.format(n_clicks, value_agg, value_lat, value_lon,
+	return '{}, {}, {}, {}'.format(value_agg, value_lat, value_lon,
  checkboxes_values)
 
 ######################################################################
