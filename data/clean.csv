@@ -1,4 +1,4 @@
-,Capacity,Latitude,Load Entering,Longitude,Member State,NRemoval,PRemoval
+,Capacity,Latitude,LoadEntering,Longitude,Member State,NRemoval,PRemoval
 0,8000.0,47.77919,6346.0,17.05039,AT,True,True
 1,65000.0,47.59491,10032.0,16.64161,AT,True,True
 2,42000.0,47.83195,38697.0,16.54416,AT,True,True
