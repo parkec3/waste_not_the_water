@@ -22,13 +22,13 @@ import dash_core_components as dcc
 app = dash.Dash()
 
 app.layout = html.Div(children=[
-	html.H1(children='Machine Learning Model'),
+	html.H2(children='Machine Learning Model'),
 	html.Div([
 		html.P('The model takes five inputs: agglomeration size, latitude,'
 		' longitude, nitrogen removal, and phosphorous removal. To predict'
 		' capacity size, fill out the form below and press submit.')
 	]),
-#	html.Br,
+	html.Hr(),
 	html.Div([
 		html.P('Input the agglomeration size.'
 	)]),
