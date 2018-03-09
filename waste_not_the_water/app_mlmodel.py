@@ -30,7 +30,7 @@ app.layout = html.Div(children=[
 	]),
 	html.Hr(),
 	html.Div([
-		html.P('Input the agglomeration size.'
+		html.P('What is the agglomeration size?'
 	)]),
 	# text input for agglomeration
 	dcc.Input(
@@ -39,6 +39,8 @@ app.layout = html.Div(children=[
 		type='text',
 		value=''
 	),
+	html.Br(),
+	html.Br(),
 	html.Div([
 		html.P('What is the latitude coordinate?'
 	)]),
@@ -49,6 +51,8 @@ app.layout = html.Div(children=[
 		type='text',
 		value=''
 	),
+	html.Br(),
+	html.Br(),
 	html.Div([
 		html.P('What is the longitude coordinate?'
 	)]),
@@ -59,6 +63,8 @@ app.layout = html.Div(children=[
 		type='text',
 		value=''
 	),
+	html.Br(),
+	html.Br(),
 	# checkboxes for the yes/no input for Nitrogen and Phosphorous
 	# removal
 	dcc.Checklist(
@@ -69,6 +75,7 @@ app.layout = html.Div(children=[
 		],
 		values=[] # do I need this for no check boxes or will it raise an error?
 	),
+	html.Br(),
 	# Submit button, make the model only run after it's pressed
 	html.Button('Submit', id='button'),
 	html.Div(id='output-container-button',
