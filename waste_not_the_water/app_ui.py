@@ -42,10 +42,10 @@ index_page = html.Div([
 # Page 2: Data Visualization
 ######################################################################
 
-# data_vis_layout = html.Div([
-# 	html.H1('Data Visualization'),
-# 	html.Div
-# ])
+data_vis_layout = html.Div([
+	html.H1('Data Visualization'),
+	html.Div(id='')
+])
 
 ######################################################################
 # Page 3: Machine Learning Model
