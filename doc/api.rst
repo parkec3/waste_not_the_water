@@ -5,7 +5,7 @@ API
 Classes
 -------
 
-.. currentmodule:: shablona
+.. currentmodule:: waste_not_the_water
 
 .. autosummary::
    :template: class.rst
