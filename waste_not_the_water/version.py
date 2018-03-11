@@ -52,8 +52,6 @@ for usage, and a DISCLAIMER OF ALL WARRANTIES.
 """
 
 NAME = "waste_not_the_water"
-MAINTAINER = "Caitlin Parke"
-MAINTAINER_EMAIL = "parkec3@uw.edu"
 DESCRIPTION = description
 LONG_DESCRIPTION = long_description
 URL = "https://github.com/parkec3/waste_not_the_water"
