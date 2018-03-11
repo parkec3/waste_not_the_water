@@ -1,1 +1,3 @@
-# this is the init file.
+from __future__ import absolute_import, division, print_function
+from .version import __version__  # noqa
+from .waste_not_the_water import *  # noqa
