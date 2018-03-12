@@ -50,8 +50,8 @@ def get_color_graph(lons,lats,capacity):
     base_map.drawcountries()
     base_map.fillcontinents(color = 'gray')
     base_map.drawmapboundary()
-    base_map.drawmeridians(np.arange(0, 360, 30))
-    base_map.drawparallels(np.arange(-90, 90, 30))
+    base_map.drawmeridians(np.arange(0, 360, 5),labels=[False,True,True,False])
+    base_map.drawparallels(np.arange(-90, 90, 5),labels=[False,True,True,False])
 
 
 
@@ -64,7 +64,7 @@ def get_color_graph(lons,lats,capacity):
     plt.show()
         
 def get_size_map(lons,lats,magnitudes):
-    plt.figure(figsize=(9,6))
+    plt.figure(figsize=(15,12))
     plt.xlabel('longitude',fontsize=10)
     plt.ylabel('latitude',fontsize=10)
     base_map1 = Basemap(projection='merc', resolution = 'l', area_thresh = 1000.0,
@@ -73,8 +73,8 @@ def get_size_map(lons,lats,magnitudes):
     base_map1.drawcountries()
     base_map1.fillcontinents(color = 'gray')
     base_map1.drawmapboundary()
-    base_map1.drawmeridians(np.arange(0, 360, 30))
-    base_map1.drawparallels(np.arange(-90, 90, 30))
+    base_map1.drawmeridians(np.arange(0, 360, 5),labels=[False,True,True,False])
+    base_map1.drawparallels(np.arange(-90, 90, 30),labels=[False,True,True,False])
 
     min_marker_size = 2.5                
     for lon, lat, mag in zip(lons, lats, magnitudes):
@@ -86,6 +86,6 @@ def get_size_map(lons,lats,magnitudes):
 
 def create_interactive_map(lat,lon,capacity):
     interactive_map = folium.Map(location=[15,60],zoom_start=5)
-    for lat0, lon0, cap in zip(lats, lons, capacity):
+    for lat0, lon0, cap in zip(lat, lon, capacity):
         folium.Marker([lat0,lon0],popup=str(cap)).add_to(interactive_map)
     return interactive_map
