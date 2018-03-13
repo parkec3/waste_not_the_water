@@ -1,6 +1,9 @@
+import waste_not_the_water
+
+import scipy
 import numpy as np
 import pandas as pd
-from linear_regression import data_cleaning
+from waste_not_the_water.linear_regression import data_cleaning
 from scipy import spatial
 
 def NP_removal(customer):
