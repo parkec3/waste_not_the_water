@@ -1,3 +1,4 @@
+import waste_not_the_water
 import numpy as np
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +22,7 @@ def data_import_clean():
 
 def create_basic_list(dff):
     """This function create lists from Capcity, Latitude,Longitude column of organized dataframe"""
-    """ It returns four lists:latitude,longitude,capacity and magnitude which scales capacity 1000000 times down"""
+    """ It returns four lists:latitude,longitude,capacity and magnitude which scales capacity 100000 times down"""
     lats,lons=[],[]
     capacity = []
     magnitudes = []
@@ -29,7 +30,7 @@ def create_basic_list(dff):
     lons = dff['Longitude'].tolist()
     capacity = dff['Capacity'].tolist()
     for i in capacity:
-        magnitudes.append(i/1000000) #Scale the capacity down for markersize on map
+        magnitudes.append(i/100000) #Scale the capacity down for markersize on map
     return lats,lons,capacity,magnitudes
 
 def get_color_marker(list,index):
@@ -88,9 +89,9 @@ def get_size_map(lons,lats,magnitudes):
     base_map1.fillcontinents(color = 'gray')
     base_map1.drawmapboundary()
     base_map1.drawmeridians(np.arange(0, 360, 5),labels=[False,True,True,False])
-    base_map1.drawparallels(np.arange(-90, 90, 30),labels=[False,True,True,False])
+    base_map1.drawparallels(np.arange(-90, 90, 5),labels=[False,True,True,False])
 
-    min_marker_size = 2.5                
+    min_marker_size = 7.5    
     for lon, lat, mag in zip(lons, lats, magnitudes):
         x,y = base_map1(lon, lat)
         msize = mag * min_marker_size # Here makes sure that the dots size are based on their capacity.
@@ -112,7 +113,7 @@ def interactive_customer_map(customer,i):
     """It returns a map contains customer data point two points calculted from Nearest_N machine model """
     interactive_map = folium.Map(location=[25,45],zoom_start=3)# Setup the basic interactive model
     customer_new=customer.loc[[i]] #Make a single-row DataFrame of interested row of customer DataFrame
-    result = nearest_n.NP_removal(customer_new)# Get a result DataFrame from Machine Learning Model
+    result =waste_not_the_water.nearest_n.NP_removal(customer_new)# Get a result DataFrame from Machine Learning Model
     lat_result = result['Latitude'].tolist() # Make lists from result to be ready for add points to map
     lon_result = result['Longitude'].tolist()
     Pop_string = ['CUSTOMER','NP_REMOVAL','NP_NONREMOVAL']
