@@ -80,6 +80,7 @@ app.layout = html.Div(children=[
 	html.Br(),
 	# Submit button, make the model only run after it's pressed
 	html.Button('Submit', id='button'),
+	html.Br(),
 	html.Div(id='output-container-button',
 			 children='Press submit after desired values have been input.')
 ])
@@ -97,7 +98,7 @@ app.layout = html.Div(children=[
 	[dash.dependencies.State('input-load-box', 'value'),
 	# Input from the lat text box
 	dash.dependencies.State('input-lat-box', 'value'),
-	# Input from the lon text box
+	# Input from the lon text boxt
 	dash.dependencies.State('input-lon-box', 'value'),
 	# Input from the checkboxes, is it one or more inputs because it's
 	# multiple values?
