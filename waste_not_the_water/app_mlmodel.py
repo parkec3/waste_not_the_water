@@ -104,7 +104,11 @@ app.layout = html.Div(children=[
 	# multiple values?
 	dash.dependencies.State('checklist', 'values')])
 def output_model(n_clicks, value_load, value_lat, value_lon,
- checkboxes_values):
+	checkboxes_values):
+	"""
+	This function updates the user interface with the output from the
+	Ridge Linear Regression model with the user-supplied inputs.
+	"""
 	##### if user inputs values other than numbers, print an error
 	##### telling them to give numeric values
 	try:
