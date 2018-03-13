@@ -5,6 +5,8 @@
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
+import pandas as pd
+import linear_regression
 
 ######################################################################
 # this is what goes into the app
@@ -30,11 +32,11 @@ app.layout = html.Div(children=[
 	]),
 	html.Hr(),
 	html.Div([
-		html.P('What is the agglomeration size?'
+		html.P('What is the size of the load entering?'
 	)]),
 	# text input for agglomeration
 	dcc.Input(
-		id='input-agg-box',
+		id='input-load-box',
 		placeholder='Enter a value...',
 		type='text',
 		value=''
@@ -91,8 +93,8 @@ app.layout = html.Div(children=[
 	dash.dependencies.Output('output-container-button', 'children'),
 	# Input from the button, number of clicks
 	[dash.dependencies.Input('button', 'n_clicks')],
-	# Input from the agg text box
-	[dash.dependencies.State('input-agg-box', 'value'),
+	# Input from the load text box
+	[dash.dependencies.State('input-load-box', 'value'),
 	# Input from the lat text box
 	dash.dependencies.State('input-lat-box', 'value'),
 	# Input from the lon text box
@@ -100,10 +102,25 @@ app.layout = html.Div(children=[
 	# Input from the checkboxes, is it one or more inputs because it's
 	# multiple values?
 	dash.dependencies.State('checklist', 'values')])
-def update_output(n_clicks, value_agg, value_lat, value_lon,
+def output_model(n_clicks, value_load, value_lat, value_lon,
  checkboxes_values):
-	return '{}, {}, {}, {}'.format(value_agg, value_lat, value_lon,
- checkboxes_values)
+	dataframe_dict = {
+		'Latitude': [float(value_lat)], 'Longitude': [float(value_lon)],
+		'LoadEntering': [float(value_load)]
+	}
+	user_input_df = pd.DataFrame(data=dataframe_dict)
+	filename_rr = "ridge_result.sav"
+	filename_lr = "linear_result.sav"
+	answer = linear_regression.customer_inter(
+	 	user_input_df, filename_lr, filename_rr
+	)
+	return 'Capacity size for these inputs is predicted to be {}'.format(
+	round(answer[1][0])) #answer[1][0]
+# complete dataframe is not returnable
+# but dataframe components are
+
+#'{}, {}, {}, {}'.format(value_load, value_lat, value_lon,
+# 	checkboxes_values)
 
 ######################################################################
 # For nicer text
