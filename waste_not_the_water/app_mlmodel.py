@@ -104,23 +104,27 @@ app.layout = html.Div(children=[
 	dash.dependencies.State('checklist', 'values')])
 def output_model(n_clicks, value_load, value_lat, value_lon,
  checkboxes_values):
-	dataframe_dict = {
-		'Latitude': [float(value_lat)], 'Longitude': [float(value_lon)],
-		'LoadEntering': [float(value_load)]
-	}
-	user_input_df = pd.DataFrame(data=dataframe_dict)
-	filename_rr = "ridge_result.sav"
-	filename_lr = "linear_result.sav"
-	answer = linear_regression.customer_inter(
-	 	user_input_df, filename_lr, filename_rr
-	)
-	return 'Capacity size for these inputs is predicted to be {}'.format(
-	round(answer[1][0])) #answer[1][0]
-# complete dataframe is not returnable
-# but dataframe components are
-
-#'{}, {}, {}, {}'.format(value_load, value_lat, value_lon,
-# 	checkboxes_values)
+	##### if user inputs values other than numbers, print an error
+	##### telling them to give numeric values
+	try:
+		float(value_lat)
+		float(value_load)
+		float(value_lon)
+	except (Exception):
+		return 'Error: input values must be numeric values. Try again.'
+	else:
+		dataframe_dict = {
+			'Latitude': [float(value_lat)], 'Longitude': [float(value_lon)],
+			'LoadEntering': [float(value_load)]
+		}
+		user_input_df = pd.DataFrame(data=dataframe_dict)
+		filename_rr = "ridge_result.sav"
+		filename_lr = "linear_result.sav"
+		answer = linear_regression.customer_inter(
+	 		user_input_df, filename_lr, filename_rr
+		)
+		return 'Capacity size for these inputs is predicted to be {}'.format(
+		round(answer[1][0]))
 
 ######################################################################
 # For nicer text
