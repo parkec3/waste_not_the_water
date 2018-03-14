@@ -3,3 +3,7 @@ numpy
 scipy
 matplotlib
 pandas
+statsmodels
+sklearn
+basemap
+folium

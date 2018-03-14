@@ -4,11 +4,11 @@
 
 Name: Build a Machine Learning Model<br/>
 What it does: It takes data as inputs and trains a new model that will be used for prediction<br/>
-Inputs: Data from the water treatment plants<br/>
+Inputs: Latitude, Longitude, Load Entering from the water treatment plants<br/>
 Outputs: What plant capacity is needed for a particular plant in a particular place for a certain amount of water<br/>
 How use other components: Data from the water treatment plant database for Europe
 Components:
-* Machine Learning package: scikitlearn
+* Machine Learning package: scikitlearn, statsmodels
 * Temperature Database for listed countries -- Weather and climate report based on location info
 * Population data/report for listed locations
 * Primary database
@@ -33,10 +33,11 @@ Work Flow:
 Name: Predict new treatment plant<br/>
 What it does: It takes waste water data from the user, what size streams and what type<br/>
 Inputs: User gives waste water data, size, and type<br/>
-Outputs: Energy/cost of new water treatment plant<br/>
-How to use other components: Uses the machine learning model and the user interface<br/>
+Outputs: Capacity of new water treatment plant and the most similar plants in the database<br/>
+How to use other components: Uses the machine learning model, nearest neighbor function and the user interface<br/>
 Components:
 * The machine learning model
+* Nearest neighbor function
 * User interface
 * Primary database
 

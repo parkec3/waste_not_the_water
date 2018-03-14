@@ -11,4 +11,6 @@ from .basemap import create_interactive_map
 from .basemap import interactive_customer_map
 
 from .linear_regression import data_cleaning
-
+from .linear_regression import linear_regression_result
+from .linear_regression import customer_inter
+from .nearest_n import NP_removal
