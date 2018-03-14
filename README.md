@@ -8,12 +8,18 @@ This repository is used for our group project for the DIRECT class as a tool for
 This is what dependencies you need:
 * basemap
 * folium
+* sklearn
+* statsmodels
+* scipy
 
 ### Installation
 
 This is how you install it:
-* $conda install basemap/pip install basemap
-* $conda install folium/pip install folium
+* $conda install basemap / pip install basemap
+* $conda install folium / pip install folium
+* $conda install scilit-learn / pip install -U scikit-learn
+* $conda install statsmodels / pip install --upgrade --no-deps statsmodels
+* $conda install scipy / pip install scipy
 
 ### Files setup
 * The python modules are in waste_not_the_water directory
