@@ -9,8 +9,6 @@ Outputs: What plant capacity is needed for a particular plant in a particular pl
 How use other components: Data from the water treatment plant database for Europe
 Components:
 * Machine Learning package: scikitlearn, statsmodels
-* Temperature Database for listed countries -- Weather and climate report based on location info
-* Population data/report for listed locations
 * Primary database
 * Packages to sort and combine databases
 * Proper dataframe/data structure for combined data
@@ -31,10 +29,11 @@ Work Flow:
 ### Second Use Case
 
 Name: Predict new treatment plant<br/>
-What it does: It takes waste water data from the user, what size streams and what type<br/>
+What it does: It takes waste water data from the user, what size streams and 
+location coordinates<br/>
 Inputs: User gives waste water data, size, and type<br/>
 Outputs: Capacity of new water treatment plant and the most similar plants in the database<br/>
-How to use other components: Uses the machine learning model, nearest neighbor function and the user interface<br/>
+How to use other components: Uses the machine learning model, nearest neighbor function, and the user interface<br/>
 Components:
 * The machine learning model
 * Nearest neighbor function
@@ -51,8 +50,7 @@ Work Flow:
 
 3. The machine learning model outputs
    * Capacity fo the treatment plant
-   * Compare the inputs the user provide with the primary database, if there is a similar case in the database, 
-Suggest the user to contact the existing plant for more information
+   * Compare the inputs the user provide with the primary database, if there is a similar case in the database and suggests the user to contact the existing plant for more information
 
 ### Third Use Case
 
@@ -61,14 +59,11 @@ What it does: Visualizes the waste water treatment database<br/>
 Inputs: Waste water treatment database<br/>
 Outputs: plots<br/>
 Components:
-* Temperature Database for listed countries -- Weather and climate report based on location info
-* Population data/report for listed locations
 * Primary database
 * Packages to sort and combine databases
 * Proper dataframe/data structure for combined data
-* basic visual model -- such as bar plot, scatter plot, list, tree, etc.
 * Packages to add features. For example: color marker, ranking,etc.
-* Methods/packages to add interactive features: Zoom-in/out,label,etc.
+* Methods/packages to add interactive features: Zoom-in/out, label, etc.
 
 Working flow:
 1. DataMining: 
@@ -84,23 +79,17 @@ Working flow:
    * Machine Learning model could probably also helps decide what features to add
 5. Interactive feature
    * Decide visulization package to make visualization interactive
-   * This could also be part of user interface 
-How use other components: Machine Learning Model, user interface as suggested above<br/>
+How use other components: Machine Learning Model, primary database<br/>
 
 ##### Primitive Component: User Interface
 
-* 3 page app from dash that runs locally on browser
-   * 1st page - default home page
-      * No interactive components except for the links to the other pages
-      * Description of the project in markdown
-      * Describe the two use cases involved and links
-   * 2nd page - data visualization
-      * interactive graph or visualization
-         * how is this going to be interactive - dash or otherwise
-      * dropdown menu for plant/agglomeration size that updates the graph
-         * interactive component - update graph
-   * 3rd page - machine learning model input
-      * Agglomeration size - text input
-      * dropdown menu for other features that are yes/no
-      * input for average max and min temperature
-      * output - what capacity is needed and the closest plant in terms of all the inputs
+* App from Dash that runs locally on browser
+   * 3 parts
+      * Brief background on use cases
+      * Data Visualization
+         * Static pictures
+         * Short description of images
+      * Machine learning model input
+         * Text inputs: Load entering, latitude, and longitude
+         * Check boxes: Phosphorous and Nitrogen removal
+         * Output: Plant capacity
