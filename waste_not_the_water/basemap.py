@@ -11,7 +11,7 @@ from pandas import *
 def data_import_clean():
     """ This function does not accept any parameter"""
     """ It cleans and organizes raw csv data and returns resulting dataframe"""
-    df = pd.read_csv('data/T_UWWTPS.csv')
+    df = pd.read_csv('T_UWWTPS.csv')
     df_toclean = pd.DataFrame(data={'aggID': df['aggID'], 'Latitude': df['uwwLatitude'], 'Longitude':
                                     df['uwwLongitude'], 'LoadEntering': df['uwwLoadEnteringUWWTP'],
                                     'Capacity': df['uwwCapacity']})  # Selecting interested columns
