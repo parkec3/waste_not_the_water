@@ -43,7 +43,7 @@ The interactive maps were created with folium and mpl_toolkits.basemap. The figu
  allow us to clearly identify the area where most waste water treatment plants
  are located in Europe.
 
-![Location relative to dot size](waste_not_the_water/waste_not_the_water/dotsMap.png)
+![Location relative to dot size](https://github.com/parkec3/waste_not_the_water/blob/master/waste_not_the_water/dotsMap.png)
 ![Color Map](https://github.com/parkec3/waste_not_the_water/blob/master/waste_not_the_water/ColourgroupMap.png)
 
 ### User Interface
