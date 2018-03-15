@@ -37,6 +37,8 @@ will return the two closest plants to the user's inputs. This is done through a 
 distance calculation of weighted capacity and location coordinates. The phosphate and 
 nitrogen removal are used as filters to further specify the treatment plants.
 
+---
+
 ### Data Visualization
 
 The interactive maps were created with folium and mpl_toolkits.basemap. The figures
@@ -45,7 +47,9 @@ The interactive maps were created with folium and mpl_toolkits.basemap. The figu
 
 Relative size by dot       |  Size by color
 :-------------------------:|:-------------------------:
-![](https://github.com/parkec3/waste_not_the_water/blob/master/waste_not_the_water/dotsMap.png)  |  ![](https://github.com/parkec3/waste_not_the_water/blob/master/waste_not_the_water/ColourgroupMap.png)
+![](https://github.com/parkec3/waste_not_the_water/blob/master/waste_not_the_water/ColourgroupMap.png)  |  ![](https://github.com/parkec3/waste_not_the_water/blob/master/waste_not_the_water/dotsMap.png)
+
+---
 
 ### User Interface
 
@@ -59,11 +63,15 @@ The user interface was created with the use of Dash by Plotly. Dash uses a pytho
 
  ![User interface](https://github.com/parkec3/waste_not_the_water/blob/master/git-ified.gif)
 
+---
+
 ### Files setup
 
 * The python modules are in `waste_not_the_water` directory.
 * The useful data are organized into `data` directory.
 * The unit test files are in the directory called `tests`.
+
+---
 
 ### Dependencies you need
 
@@ -74,6 +82,8 @@ This is what dependencies you need:
 * statsmodels
 * scipy
 * dash by plotly
+
+---
 
 ### Installation
 
@@ -89,11 +99,16 @@ This is how you install it:
 * $conda install dash-core-components==0.21.0 / pip install dash-core-components==0.21.0
 * $conda install plotly --upgrade / pip install plotly --upgrade
 
+---
+
 ### Examples
 
 For more information on how to use our package, go to the `examples` folder.
 
+---
+
 ### Acknowledgments
 
-We would like to profusely thank our wonderful instructor, Prof. David Beck, and our 
-amazing teaching assistants, Nick Montoni, Arushi Prakash, and Coco Mao.
+Last but not least, we would like to profusely thank our wonderful instructor, Prof. 
+David Beck, and our amazing teaching assistants, Nick Montoni, Arushi Prakash, 
+and Coco Mao. Thanks for all the great instruction and help!
