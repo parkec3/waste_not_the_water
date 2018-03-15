@@ -1,16 +1,17 @@
 
 # waste_not_the_water
 
-This repository is used for our group project for the DIRECT class as a tool for 
-wastewater treatment plants. This tool can be used to predict capacity for a new 
+waste_not_the_water is data science tool for urban waste water treatment 
+plants created through the [DIRECT courses](https://uwdirect.github.io/) at
+ University of Washington. This tool can be used to predict capacity for a new 
 European wastewater treatment plant and a visualization of the database from the 
 Waste Water Treatment Directive. waste_not_the_water utilizes the open 
 [Urban Waste Water Treatment database](https://www.eea.europa.eu/data-and-maps/data/waterbase-uwwtd-urban-waste-water-treatment-directive-5) from the 
 [the European Environment Agency](https://www.eea.europa.eu/). 
 Our primary use case is to create a data science tool that predicts capacity based 
 on user inputs; this was done with the use of a user interface. waste_not_the_water 
-also contains interactive data visualization of the size and location of the existing
- water treatment infrastructure in Europe.
+also contains interactive data visualization showing the size and location of the 
+existing waste water treatment infrastructure in Europe.
 
 ---
 
@@ -42,6 +43,9 @@ The interactive maps were created with folium and mpl_toolkits.basemap. The figu
  allow us to clearly identify the area where most waste water treatment plants
  are located in Europe.
 
+![Location relative to dot size](waste_not_the_water/waste_not_the_water/dotsMap.png)
+![Color Map](waste_not_the_water/waste_not_the_water/ColourgroupMap.png)
+
 ### User Interface
 
 The user interface was created with the use of Dash by Plotly. Dash uses a python
@@ -54,9 +58,9 @@ The user interface was created with the use of Dash by Plotly. Dash uses a pytho
 
 ### Files setup
 
-* The python modules are in waste_not_the_water directory.
-* The useful data are organized into data directory
-* The unit test files are in the directory called tests
+* The python modules are in `waste_not_the_water` directory.
+* The useful data are organized into `data` directory.
+* The unit test files are in the directory called `tests`.
 
 ### Dependencies you need
 
@@ -84,4 +88,9 @@ This is how you install it:
 
 ### Examples
 
-For more information on how to use our tool, go to the examples folder.
+For more information on how to use our package, go to the `examples` folder.
+
+### Acknowledgments
+
+We would like to profusely thank our wonderful instructor, Prof. David Beck, and our 
+amazing teaching assistants, Nick Montoni, Arushi Prakash, and Coco Mao.
