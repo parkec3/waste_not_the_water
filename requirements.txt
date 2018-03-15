@@ -1,9 +1,0 @@
-# use pip freeze to get all these for our package
-numpy
-scipy
-matplotlib
-pandas
-statsmodels
-sklearn
-basemap
-folium
