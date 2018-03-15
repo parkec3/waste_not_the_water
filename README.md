@@ -57,6 +57,8 @@ The user interface was created with the use of Dash by Plotly. Dash uses a pytho
  [url](http://127.0.0.1:8050/). For more information on Dash, check out their
  awesome [website](https://dash.plot.ly/getting-started).
 
+ ![User interface](https://github.com/parkec3/waste_not_the_water/blob/master/git-ified.gif)
+
 ### Files setup
 
 * The python modules are in `waste_not_the_water` directory.
